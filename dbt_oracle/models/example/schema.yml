@@ -1,0 +1,42 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model demonstrating basic dbt functionality with sample data"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "Example model showing how to reference other dbt models using the ref() function"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: deals_vw
+    description: "Aggregated view of deals showing the most recent record for each deal by organization. Filters out processed deals and groups by deal_id, organization_id, and description."
+    columns:
+      - name: deal_id
+        description: "Unique identifier for the deal"
+        data_tests:
+          - not_null
+      - name: organization_id
+        description: "Organization identifier associated with the deal"
+        data_tests:
+          - not_null
+      - name: description
+        description: "Deal description text"
+      - name: created
+        description: "Most recent creation timestamp for the deal (MAX aggregated)"
+        data_tests:
+          - not_null
+
+  - name: DealsByLocations
+    description: "Location-based analysis of deals data"

@@ -1,5 +1,3 @@
-# Dbt-Oracle-public
-Creating dbt models in Oracle database 
 # DBT-Oracle
 
 A dbt (data build tool) project for Oracle Database transformations and analytics.

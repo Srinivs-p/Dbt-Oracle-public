@@ -1,0 +1,1 @@
+SELECT * FROM deals_own.deals
